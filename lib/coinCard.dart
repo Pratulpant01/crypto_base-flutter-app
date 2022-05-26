@@ -53,18 +53,21 @@ class coinCard extends StatelessWidget {
                 ),
               ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  symbol,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                )
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    symbol,
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
@@ -80,7 +83,7 @@ class coinCard extends StatelessWidget {
                   ),
                   Text(
                     changePrice.toDouble() < 0
-                        ? "-" + changePrice.toDouble().toStringAsFixed(2)
+                        ? changePrice.toDouble().toStringAsFixed(2)
                         : "+" + changePrice.toDouble().toStringAsFixed(2),
                     style: TextStyle(
                       fontSize: 15,
@@ -92,9 +95,7 @@ class coinCard extends StatelessWidget {
                   ),
                   Text(
                     pricePercentage.toDouble() < 0
-                        ? "-" +
-                            pricePercentage.toDouble().toStringAsFixed(2) +
-                            "%"
+                        ? pricePercentage.toDouble().toStringAsFixed(2) + "%"
                         : "+" +
                             pricePercentage.toDouble().toStringAsFixed(2) +
                             "%",

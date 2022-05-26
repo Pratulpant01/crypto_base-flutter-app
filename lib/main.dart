@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:cypto_oo/constant/constant.dart';
@@ -50,6 +51,7 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     fetchCoins();
+    Timer.periodic(Duration(seconds: 10), ((timer) => fetchCoins()));
     super.initState();
   }
 
@@ -60,6 +62,15 @@ class _HomeState extends State<Home> {
       home: Scaffold(
           backgroundColor: bgColor,
           appBar: AppBar(
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.search,
+                  size: 30,
+                ),
+              ),
+            ],
             leading: Transform.scale(
               scale: 0.8,
               child: IconButton(
