@@ -1,7 +1,6 @@
 # Crypto_oo
 
-A new Flutter project.
-
+![](https://github.com/Pratulpant01/crypto_base-flutter-app/blob/master/CryptooBase.gif)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
